@@ -15,54 +15,63 @@ switch (opcion)
             {
                 Console.WriteLine("Ingresar dia: ");
                 int dia = int.Parse(Console.ReadLine());
-                if (dia >= 1 && dia <=7)
+                if (dia >= 1 && dia <= 7)
                 {
                     Console.WriteLine("Carnet vigente: (S/N) ");
                     string carne = Console.ReadLine();
-                    if (carne == "S")
+                    Console.WriteLine("Autorización escrita: (S/N) ");
+                    string autorizacion = Console.ReadLine();
+                    Console.WriteLine("Trae USB: (S/N) ");
+                    string traeUSB = Console.ReadLine();
+                    if (traeUSB=="S")
                     {
-                        Console.WriteLine("Autorización escrita: (S/N) ");
-                        string autorizacion = Console.ReadLine();
-                        if (carne == "S")
+                        Console.WriteLine("Está acompañado: (S/N) ");
+                        string acompañado = Console.ReadLine();
+                        if (acompañado=="S")
                         {
-                            Console.WriteLine("Trae USB: (S/N) ");
-                            string traeUSB = Console.ReadLine();
-                            if (traeUSB == "S")
-                            {
-                                Console.WriteLine("Está acompañado: (S/N) ");
-                                string acompañado = Console.ReadLine();
-                                if (acompañado == "S")
-                                {
-                                    Console.WriteLine();
-                                }
-                                else
-                                {
-                                    Console.WriteLine("No esta acompañado");
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("No trae USB");
-                            }
+                            Console.WriteLine("Uso del USb concedido");
                         }
                         else
                         {
-                            Console.WriteLine("Autorizacion invalido");
+                            Console.WriteLine("Uso del USb denegado");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Carne invalido");
+                        Console.WriteLine("No trae USB");
+                    }
+                    string acceso;
+                    string nivel;
+                    if (hora >= 7 && hora <= 18)
+                    {
+                        if (autorizacion == "S")
+                        {
+                            acceso = "Consedido";
+                            nivel = "Permirtido al estudiante";
+                        }
+                        else if (autorizacion=="N" && carne=="S")
+                        {
+                            acceso = "Consedido condicionalmente";
+                            nivel = "Permirtido condicionalmente al estudiante";
+                        }
+                        else
+                        {
+                            acceso = "Denegado";
+                            nivel = "Denegado al estudiante";
+                        }
+                        Console.WriteLine("RESULTADO");
+                        Console.WriteLine($"El acceso es:  {acceso}");
+                        Console.WriteLine($"Nivel de permiso es:   {nivel}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Dia invalida");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Dia invalida");
+                    Console.WriteLine("Hora invalida");
                 }
-            }
-            else
-            {
-                Console.WriteLine("Hora invalida");
             }
             break;
         }
@@ -78,50 +87,59 @@ switch (opcion)
                 {
                     Console.WriteLine("Carnet vigente: (S/N) ");
                     string carne = Console.ReadLine();
-                    if (carne == "S")
+                    Console.WriteLine("Autorización escrita: (S/N) ");
+                    string autorizacion = Console.ReadLine();
+                    Console.WriteLine("Trae USB: (S/N) ");
+                    string traeUSB = Console.ReadLine();
+                    if (traeUSB == "S")
                     {
-                        Console.WriteLine("Autorización escrita: (S/N) ");
-                        string autorizacion = Console.ReadLine();
-                        if (carne == "S")
+                        Console.WriteLine("Está acompañado: (S/N) ");
+                        string acompañado = Console.ReadLine();
+                        if (acompañado == "S")
                         {
-                            Console.WriteLine("Trae USB: (S/N) ");
-                            string traeUSB = Console.ReadLine();
-                            if (traeUSB == "S")
-                            {
-                                Console.WriteLine("Está acompañado: (S/N) ");
-                                string acompañado = Console.ReadLine();
-                                if (acompañado == "S")
-                                {
-                                    Console.WriteLine();
-                                }
-                                else
-                                {
-                                    Console.WriteLine("No esta acompañado");
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("No trae USB");
-                            }
+                            Console.WriteLine("Uso del USb concedido");
                         }
                         else
                         {
-                            Console.WriteLine("Autorizacion invalido");
+                            Console.WriteLine("Uso del USb denegado");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Carne invalido");
+                        Console.WriteLine("No trae USB");
+                    }
+                    string acceso;
+                    string nivel;
+                    if (hora >= 7 && hora <= 18)
+                    {
+                        if (carne == "S")
+                        {
+                            acceso = "Consedido";
+                            nivel = "Permirtido al docente";
+                        }
+                        else if (carne == "N" && autorizacion == "S")
+                        {
+                            acceso = "Consedido condicionalmente";
+                            nivel = "Permirtido condicionalmente al docente";
+                        }
+                        else
+                        {
+                            acceso = "Denegado";
+                            nivel = "Denegado al docente";
+                        }
+                        Console.WriteLine("RESULTADO");
+                        Console.WriteLine($"El acceso es:  {acceso}");
+                        Console.WriteLine($"Nivel de permiso es:   {nivel}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Dia invalida");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Dia invalida");
+                    Console.WriteLine("Hora invalida");
                 }
-            }
-            else
-            {
-                Console.WriteLine("Hora invalida");
             }
             break;
         }
@@ -137,50 +155,54 @@ switch (opcion)
                 {
                     Console.WriteLine("Carnet vigente: (S/N) ");
                     string carne = Console.ReadLine();
-                    if (carne == "S")
+                    Console.WriteLine("Autorización escrita: (S/N) ");
+                    string autorizacion = Console.ReadLine();
+                    Console.WriteLine("Trae USB: (S/N) ");
+                    string traeUSB = Console.ReadLine();
+                    if (traeUSB == "S")
                     {
-                        Console.WriteLine("Autorización escrita: (S/N) ");
-                        string autorizacion = Console.ReadLine();
-                        if (carne == "S")
+                        Console.WriteLine("Está acompañado: (S/N) ");
+                        string acompañado = Console.ReadLine();
+                        if (acompañado == "S")
                         {
-                            Console.WriteLine("Trae USB: (S/N) ");
-                            string traeUSB = Console.ReadLine();
-                            if (traeUSB == "S")
-                            {
-                                Console.WriteLine("Está acompañado: (S/N) ");
-                                string acompañado = Console.ReadLine();
-                                if (acompañado == "S")
-                                {
-                                    Console.WriteLine();
-                                }
-                                else
-                                {
-                                    Console.WriteLine("No esta acompañado");
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("No trae USB");
-                            }
+                            Console.WriteLine("Uso del USb concedido");
                         }
                         else
                         {
-                            Console.WriteLine("Autorizacion invalido");
+                            Console.WriteLine("Uso del USb denegado");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Carne invalido");
+                        Console.WriteLine("No trae USB");
+                    }
+                    string acceso;
+                    string nivel;
+                    if (hora <=6 && hora >= 19)
+                    {
+                        if (autorizacion == "S")
+                        {
+                            acceso = "Consedido";
+                            nivel = "Permirtido al tecnico";
+                        }
+                        else
+                        {
+                            acceso = "Denegado";
+                            nivel = "Denegado al tecnico";
+                        }
+                        Console.WriteLine("RESULTADO");
+                        Console.WriteLine($"El acceso es:  {acceso}");
+                        Console.WriteLine($"Nivel de permiso es:   {nivel}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Dia invalida");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Dia invalida");
+                    Console.WriteLine("Hora invalida");
                 }
-            }
-            else
-            {
-                Console.WriteLine("Hora invalida");
             }
             break;
         }
@@ -194,54 +216,56 @@ switch (opcion)
                 int dia = int.Parse(Console.ReadLine());
                 if (dia >= 1 && dia <= 7)
                 {
-                    Console.WriteLine("Carnet vigente: (S/N) ");
-                    string carne = Console.ReadLine();
-                    if (carne == "S")
+                    Console.WriteLine("Autorización escrita: (S/N) ");
+                    string autorizacion = Console.ReadLine();
+                    Console.WriteLine("Trae USB: (S/N) ");
+                    string traeUSB = Console.ReadLine();
+                    Console.WriteLine("Está acompañado: (S/N) ");
+                    string acompañado = Console.ReadLine();
+                    if (traeUSB == "S")
                     {
-                        Console.WriteLine("Autorización escrita: (S/N) ");
-                        string autorizacion = Console.ReadLine();
-                        if (carne == "S")
+                        if (acompañado == "S")
                         {
-                            Console.WriteLine("Trae USB: (S/N) ");
-                            string traeUSB = Console.ReadLine();
-                            if (traeUSB == "S")
-                            {
-                                Console.WriteLine("Está acompañado: (S/N) ");
-                                string acompañado = Console.ReadLine();
-                                if (acompañado == "S")
-                                {
-                                    Console.WriteLine();
-                                }
-                                else
-                                {
-                                    Console.WriteLine("No esta acompañado");
-                                }
-                            }
-                            else
-                            {
-                                Console.WriteLine("No trae USB");
-                            }
+                            Console.WriteLine("Uso del USb concedido");
                         }
                         else
                         {
-                            Console.WriteLine("Autorizacion invalido");
+                            Console.WriteLine("Uso del USb denegado");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Carne invalido");
+                        Console.WriteLine("No trae USB");
+                    }
+                    string acceso;
+                    string nivel;
+                    if (autorizacion=="S")
+                    {
+                        if (acompañado == "S")
+                        {
+                            acceso = "Consedido";
+                            nivel = "Permirtido al visitante";
+                        }
+                        else
+                        {
+                            acceso = "Denegado";
+                            nivel = "Denegado al visitante";
+                        }
+                        Console.WriteLine("RESULTADO");
+                        Console.WriteLine($"El acceso es:  {acceso}");
+                        Console.WriteLine($"Nivel de permiso es:   {nivel}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Dia invalida");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Dia invalida");
+                    Console.WriteLine("Hora invalida");
                 }
             }
-            else
-            {
-                Console.WriteLine("Hora invalida");
-            }
-            break;
+            break;  
         }
     default:
         {
